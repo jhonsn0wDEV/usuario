@@ -1,5 +1,4 @@
-package com.john.aprendendo.spring.infrastructure.repository;
-
+package com.john.Usuario.infrastructure.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
@@ -9,11 +8,11 @@ import java.util.Optional;
 
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<com.john.aprendendo.spring.infrastructure.entity.Usuario,Long> {
+public interface UsuarioRepository extends JpaRepository<com.john.Usuario.infrastructure.entity.Usuario,Long> {
 
     boolean existsByEmail(String email);
 
-    Optional<com.john.aprendendo.spring.infrastructure.entity.Usuario> findByEmail(String email);
+    Optional<com.john.Usuario.infrastructure.entity.Usuario> findByEmail(String email);
 
 
     @Transactional

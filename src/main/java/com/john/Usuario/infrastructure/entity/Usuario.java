@@ -1,4 +1,4 @@
-package com.john.aprendendo.spring.infrastructure.entity;
+package com.john.Usuario.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -31,10 +31,10 @@ public class Usuario implements UserDetails {
     private String senha;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "usuario.id", referencedColumnName = "id")
-    private List<Endereco> enderecos;
+    private List<com.john.Usuario.infrastructure.entity.Endereco> enderecos;
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "usuario.id", referencedColumnName = "id")
-    private List<Telefone> telefones;
+    private List<com.john.Usuario.infrastructure.entity.Telefone> telefones;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

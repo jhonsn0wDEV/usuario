@@ -1,6 +1,4 @@
-package com.john.aprendendo.spring.infrastructure.security;
-
-
+package com.john.Usuario.infrastructure.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -13,13 +11,13 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     // Repositório para acessar dados de usuário no banco de dados
     @Autowired
-    private com.john.aprendendo.spring.infrastructure.repository.UsuarioRepository usuarioRepository;
+    private com.john.Usuario.infrastructure.repository.UsuarioRepository usuarioRepository;
 
     // Implementação do método para carregar detalhes do usuário pelo e-mail
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // Busca o usuário no banco de dados pelo e-mail
-        com.john.aprendendo.spring.infrastructure.entity.Usuario usuario = usuarioRepository.findByEmail(email)
+        com.john.Usuario.infrastructure.entity.Usuario usuario = usuarioRepository.findByEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException("Usuário não encontrado: " + email));
 
         // Cria e retorna um objeto UserDetails com base no usuário encontrado
